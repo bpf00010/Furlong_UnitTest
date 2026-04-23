@@ -1,0 +1,39 @@
+﻿@page
+@model Furlong_UnitTest.Pages.AddProductModel
+@{
+
+
+
+    <form method="post">
+    
+        <div class="form-group">
+        <label>Product Name</label>
+        <input type="text" class="form-control" id="ProductName" asp-for="product.ProductName" required />
+
+         
+        
+        
+        </div>
+    
+        <div class="form-group">
+        <label>Category</label>
+        <textarea class="form-control" id="Category" asp-for="product.Category" required></textarea>
+
+        </div>
+    
+        <div class="form-group">
+        <label>Price</label>
+        <input type="number" step="0.01" class="form-control" id="Price" asp-for="product.Price" required />
+        </div>
+
+        <div class="form-group">
+        <label>Stock Quantity</label>
+        <input type="text" class="form-control" id="StockQuantity" asp-for="product.StockQuantity" required />
+
+        </div>
+
+        <button type="submit" class="btn btn-primary">Add Product</button>
+
+    
+    </form>
+}

@@ -1,10 +1,49 @@
 ﻿@page
-@model IndexModel
+@using Furlong_UnitTest.Models
+@model Furlong_UnitTest.Pages.IndexModel
 @{
     ViewData["Title"] = "Home page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<h1>Products</h1>
+
+
+<div class="row">
+    @foreach (var product in Model.Products)
+    {
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">@product.ProductName</h5>
+                    
+                    <p class="card-text">
+                        Product Name: @product.ProductName<br />
+                        Price: @product.Price.ToString("C")<br />
+                        Category: @product.Category<br />
+                        Available Qty: @product.StockQuantity <br />
+                    </p>
+
+                   
+                    <a asp-page="/ProductDetails" asp-route-id="@product.ProductId" class="btn btn-primary">Details</a>
+
+
+
+                    </div>
+
+               
+                
+                
+                </div>
+
+            
+            
+            
+            </div>
+          
+        
+        
+        
+        
+        
+    }
+    </div>
